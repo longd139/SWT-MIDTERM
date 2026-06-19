@@ -1,21 +1,3 @@
-# Simple Calculator - Source Code
-
-Basic calculator program that takes two numbers and an operator, then returns the result.
-
-# Simple Calculator - Source Code
-
-This document contains the source code and function description of the `SimpleCalculator` class, used for Assignment 1 of the SWT Midterm research project.
-
-## Supported functions
-
-* Basic operators: `+` (add), `-` (subtract), `*` or `x` (multiply), `/` (divide)
-* Special cases handled: negative numbers, zero, decimal numbers, division by zero, invalid operator
-
----
-
-## Source Code
-
-```java
 public class SimpleCalculator {
 
     /**
@@ -98,4 +80,3 @@ public class SimpleCalculator {
         return num1 / num2;
     }
 }
-```
