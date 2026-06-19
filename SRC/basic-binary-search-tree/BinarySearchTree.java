@@ -5,17 +5,17 @@ public class BinarySearchTree {
     
     Node root;
 
-    // Khởi tạo cây rỗng
+    // Initialize an empty tree
     public BinarySearchTree() {
         root = null;
     }
 
-    // Kiểm tra cây rỗng
+    // Check if the tree is empty
     public boolean isEmpty() {
         return root == null;
     }
 
-    // Thêm một node mới
+    // Insert a new node
     public void insert(int key) {
         root = insertRec(root, key);
     }
@@ -31,11 +31,11 @@ public class BinarySearchTree {
         } else if (key > root.key) {
             root.right = insertRec(root.right, key);
         }
-        // Lưu ý: Các giá trị trùng lặp sẽ bị bỏ qua, không được thêm vào
+        // Note: Duplicate values will be ignored and not added
         return root;
     }
 
-    // Tìm kiếm một giá trị
+    // Search for a value
     public boolean search(int key) {
         return searchRec(root, key) != null;
     }
@@ -50,7 +50,7 @@ public class BinarySearchTree {
         return searchRec(root.right, key);
     }
 
-    // Xóa một node
+    // Delete a node
     public void delete(int key) {
         root = deleteRec(root, key);
     }
@@ -65,18 +65,18 @@ public class BinarySearchTree {
         } else if (key > root.key) {
             root.right = deleteRec(root.right, key);
         } else {
-            // Trường hợp node cần xóa có 1 con hoặc không có con
+            // Case where the node to be deleted has 1 child or no children
             if (root.left == null) {
                 return root.right;
             } else if (root.right == null) {
                 return root.left;
             }
 
-            // Trường hợp node cần xóa có 2 con:
-            // Tìm node kế nhiệm (nhỏ nhất ở cây con phải)
+            // Case where the node to be deleted has 2 children:
+            // Find the in-order successor (the smallest value in the right subtree)
             root.key = minValue(root.right);
 
-            // Xóa node kế nhiệm
+            // Delete the in-order successor
             root.right = deleteRec(root.right, root.key);
         }
         return root;
@@ -91,7 +91,7 @@ public class BinarySearchTree {
         return minv;
     }
 
-    // Duyệt cây theo thứ tự In-order (Trái - Gốc - Phải)
+    // Traverse the tree in In-order (Left - Root - Right)
     public List<Integer> inorder() {
         List<Integer> result = new ArrayList<>();
         inorderRec(root, result);
