@@ -15,20 +15,23 @@ public class SimpleCalculator {
             throw new IllegalArgumentException("operator is null");
         }
 
-        if (operator.equals("+")) {
+        // Trim whitespace to handle cases like " + ", " x "
+        String op = operator.trim();
+
+        if (op.equals("+")) {
             return add(num1, num2);
 
-        } else if (operator.equals("-")) {
+        } else if (op.equals("-")) {
             return subtract(num1, num2);
 
-        } else if (operator.equals("*") || operator.equals("x") || operator.equals("X")) {
+        } else if (op.equals("*") || op.equals("x") || op.equals("X")) {
             return multiply(num1, num2);
 
-        } else if (operator.equals("/")) {
+        } else if (op.equals("/")) {
             return divide(num1, num2);
 
         } else {
-            throw new IllegalArgumentException("invalid operator: " + operator);
+            throw new IllegalArgumentException("invalid operator: " + op);
         }
     }
 
