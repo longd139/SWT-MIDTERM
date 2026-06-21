@@ -1,0 +1,5 @@
+# Created at 2026-06-20T13:21:34.238
+Boot Manifest-JAR contains absolute paths in classpath 'D:\Ki 5\SWT\SWT-MIDTERM\SRC\simple-calculator\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+
